@@ -64,7 +64,7 @@ export default function App () {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${token}`
+          // Authorization: `Bearer ${token}`
         },
         body: JSON.stringify({ ...bookmark })
       })
@@ -85,7 +85,7 @@ export default function App () {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}`
+          // Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}`
         }
       })
       const data = await response.json()
@@ -100,7 +100,7 @@ export default function App () {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${token}`
+          // Authorization: `Bearer ${token}`
         }
       })
       const data = await response.json()
@@ -118,7 +118,7 @@ export default function App () {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${token}`
+          // Authorization: `Bearer ${token}`
         },
         body: JSON.stringify(updatedData)
       })
@@ -132,19 +132,19 @@ export default function App () {
     }
   }
 
-  useEffect(() => {
-    const tokenData = localStorage.getItem('token')
-    if (tokenData && tokenData !== 'null' && tokenData !== 'undefined') {
-      listBookmarksByUser()
-    }
-  }, [])
+  // useEffect(() => {
+  //   const tokenData = localStorage.getItem('token')
+  //   if (tokenData && tokenData !== 'null' && tokenData !== 'undefined') {
+  //     listBookmarksByUser()
+  //   }
+  // }, [])
 
-  useEffect(() => {
-    const tokenData = localStorage.getItem('token')
-    if (tokenData && tokenData !== 'null' && tokenData !== 'undefined') {
-      setToken(JSON.parse(tokenData))
-    }
-  }, [])
+  // useEffect(() => {
+  //   const tokenData = localStorage.getItem('token')
+  //   if (tokenData && tokenData !== 'null' && tokenData !== 'undefined') {
+  //     setToken(JSON.parse(tokenData))
+  //   }
+  // }, [])
   return (
     <>
       {/* <Auth
