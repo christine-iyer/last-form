@@ -1,3 +1,4 @@
+import Form from 'react-bootstrap/Form'
 export default function CreateBookmark ({
      createBookmark,
      bookmark,
@@ -6,15 +7,15 @@ export default function CreateBookmark ({
      return (
        <>
          <h2>Create A Bookmark</h2>
-         <form onSubmit={(e) => {
+         <Form onSubmit={(e) => {
            e.preventDefault()
            createBookmark()
          }}
          >
            <input type='text' value={bookmark.title} name='title' onChange={handleChange} placeholder='Title' />
-           <input type='text' value={bookmark.url} name='url' onChange={handleChange} placeholder='URL' />
+           <input type='text' value={bookmark.link} name='link' onChange={handleChange} placeholder='Link' />
            <input type='submit' value='Create Bookmark' />
-         </form>
+         </Form>
        </>
      )
    }

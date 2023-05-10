@@ -1,4 +1,6 @@
 import { useRef, useState } from 'react'
+import Card from 'react-bootstrap/Card'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Bookmark ({
   bookmark,
@@ -24,7 +26,7 @@ export default function Bookmark ({
           }}
           defaultValue={bookmark.title}
         />
-        <a href={bookmark.url} target='_blank' rel='noreferrer'> {bookmark.url}</a>
+        <a href={bookmark.link} target='_blank' rel='noreferrer'> {bookmark.link}</a>
         <button
           onClick={() => deleteBookmark(bookmark._id)}
         >

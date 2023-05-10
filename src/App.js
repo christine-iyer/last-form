@@ -25,7 +25,7 @@ export default function App () {
 
   const [bookmark, setBookmark] = useState({
     title: '',
-    url: ''
+    link: ''
   })
   const [bookmarks, setBookmarks] = useState([])
 
@@ -74,7 +74,7 @@ export default function App () {
     updateImage(result?.info?.secure_url);
     setBookmark({
        title: '',
-       url: result?.info?.secure_url
+       link: result?.info?.secure_url
    })
 
 
@@ -97,7 +97,7 @@ export default function App () {
     } finally {
       setBookmark({
         title: '',
-        url: ''
+        link: ''
       })
     }
   }

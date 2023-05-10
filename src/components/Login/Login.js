@@ -1,3 +1,8 @@
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import { ListGroup, Card } from 'react-bootstrap';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 export default function Login ({
      login,
      credentials,
@@ -5,16 +10,42 @@ export default function Login ({
    }) {
      return (
        <>
-         <h2>Login</h2>
-         <form onSubmit={(e) => {
-           e.preventDefault()
-           login()
-         }}
-         >
-           <input type='text' value={credentials.email} name='email' onChange={handleChangeAuth} placeholder='Email Here' />
-           <input type='password' value={credentials.password} name='password' onChange={handleChangeAuth} placeholder='Password' />
-           <input type='submit' value='Login as an Existing User' />
-         </form>
+         <Form
+                                        style={{ width: '78rem' }}
+                                        onSubmit={(e) => {
+                                            e.preventDefault()
+                                            login()
+                                        }}>
+                                        <h2>Login</h2>
+                                        <Row>
+                                            <Col>
+                                                <Form.Group controlId='formBasicEmail'>
+                                                    <Form.Label>Email</Form.Label>
+                                                    <Form.Control
+                                                        onChange={handleChangeAuth}
+                                                        value={credentials.email}
+                                                        name='email'
+                                                        type='text'
+                                                        placeholder='Enter your Email'
+                                                    />
+                                                </Form.Group>
+                                            </Col>
+                                            <Col>
+                                                <Form.Group controlId='formBasicPassword'>
+                                                    <Form.Label>Password</Form.Label>
+                                                    <Form.Control onChange={handleChangeAuth}
+                                                        value={credentials.password}
+                                                        name='password'
+                                                        type='text'
+                                                        placeholder='Enter your Password' />
+                                                </Form.Group>
+                                            </Col>
+                                        </Row>
+                                        <Button variant='success' type='submit'>Submit
+                                        </Button>
+                                    </Form>
        </>
      )
    }
+
+ 
