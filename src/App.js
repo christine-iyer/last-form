@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import Auth from './components/Auth/Auth'
 import CreateBookmark from './components/CreateBookmark/CreateBookmark'
 import BookmarkList from './components/BookmarkList/BookmarkList'
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function App () {
   /*
