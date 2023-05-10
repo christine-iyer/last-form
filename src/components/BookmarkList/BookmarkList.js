@@ -1,4 +1,4 @@
-import Entry from '../Entry/Entry'
+import Bookmark from '../Bookmark/Bookmark'
 
 export default function BookmarkList ({
   bookmarks,
@@ -10,7 +10,7 @@ export default function BookmarkList ({
       {
             bookmarks.length
               ? bookmarks.map(bookmark => (
-                <Entry
+                <Bookmark
                   key={bookmark._id}
                   bookmark={bookmark}
                   updateBookmark={updateBookmark}
