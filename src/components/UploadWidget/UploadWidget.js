@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import { Cloudinary } from "@cloudinary/url-gen";
 
 let cloudinary;
 let widget;

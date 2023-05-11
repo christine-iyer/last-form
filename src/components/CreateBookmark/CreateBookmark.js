@@ -1,42 +1,14 @@
-import {Form, Button, Row, Col, Card} from 'react-bootstrap'
-import UploadWidget from '../UploadWidget/UploadWidget';
+import {Form, Button, Row, Col} from 'react-bootstrap'
+
 
 export default function CreateBookmark ({
      createBookmark,
      bookmark,
-     handleChange,
-     handleOnUpload, 
-     url, 
-     error
+     handleChange
    }) {
      return (
        <>
-       <div className="container">
-        <h2>Unsigned with Upload Preset</h2>
-        <UploadWidget onUpload={handleOnUpload}>
-          {({ open }) => {
-            function handleOnClick(e) {
-              e.preventDefault();
-              open();
-            }
-            return (
-              <button onClick={handleOnClick}>
-                Upload an Image
-              </button>
-            )
-          }}
-        </UploadWidget>
-
-        {error && <p>{error}</p>}
-
-        {url && (
-          <Card key={url._id} className="card" style={{ width: '18rem' }}
-          >
-            <Card.Img variant="top" src={url} id="uploadedimage" ></Card.Img>
-            <Card.Body className='url'>{url}</Card.Body>
-          </Card>
-        )}
-      </div>
+       
           <Form
                 style={{ width: '78rem' }}
                 onSubmit={(e) => {

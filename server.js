@@ -1,6 +1,7 @@
 require('dotenv').config()
 require('./config/database')
 const express = require('express')
+// const cors = require('cors')
 const path = require('path')
 const favicon = require('serve-favicon')
 const logger = require('morgan')
@@ -16,6 +17,8 @@ app.use((req, res, next) => {
 app.use(logger('dev'))
 
 app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')))
+// app.use(cors())
+// app.use(express.urlencoded({ extended: true }))
 app.use(express.static(path.join(__dirname, 'build')))
 app.use('/api/users', require('./routes/api/users'))
 app.use('/api/bookmarks', require('./routes/api/bookmarks'))
