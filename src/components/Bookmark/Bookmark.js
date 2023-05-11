@@ -26,12 +26,18 @@ export default function Bookmark ({
           }}
           defaultValue={bookmark.title}
         />
+
         <a href={bookmark.link} target='_blank' rel='noreferrer'> {bookmark.link}</a>
         <button
           onClick={() => deleteBookmark(bookmark._id)}
         >
           Delete Me
         </button>
+
+        
+
+
+
       </li>
     </>
   )

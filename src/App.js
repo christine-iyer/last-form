@@ -3,8 +3,10 @@ import Auth from './components/Auth/Auth'
 import CreateBookmark from './components/CreateBookmark/CreateBookmark'
 import BookmarkList from './components/BookmarkList/BookmarkList'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-export default function App () {
+import { Cloudinary } from "@cloudinary/url-gen";
+import { Card } from 'react-bootstrap';
+import UploadWidget from './components/UploadWidget/UploadWidget';
+export default function App() {
   /*
     Login, SignUp, CreateBookmark, ListBookmarksByUser, DeleteBookmark, UpdateBookmark
     */
@@ -20,12 +22,14 @@ export default function App () {
     password: '',
     name: ''
   })
-  const [image, updateImage] = useState("https://lolo.com");
+  const [url, updateUrl] = useState("https://lolo.com");
   const [error, updateError] = useState();
 
   const [bookmark, setBookmark] = useState({
     title: '',
-    link: ''
+    category: '',
+    image: '',
+    body: ''
   })
   const [bookmarks, setBookmarks] = useState([])
 
@@ -64,22 +68,24 @@ export default function App () {
   }
   function handleOnUpload(error, result, widget) {
     if (error) {
-        updateError(error);
-        widget.close({
-            quiet: true
-        });
-        return;
+      updateError(error);
+      widget.close({
+        quiet: true
+      });
+      return;
     }
     console.dir(result);
-    updateImage(result?.info?.secure_url);
+    updateUrl(result?.info?.secure_url);
     setBookmark({
-       title: '',
-       link: result?.info?.secure_url
-   })
+      title: '',
+      category: '',
+      image: result?.info?.secure_url,
+      body: ''
+    })
 
 
-    console.dir(image);
-}
+    console.dir(url);
+  }
   const createBookmark = async () => {
     try {
       const response = await fetch('/api/bookmarks', {
@@ -97,7 +103,9 @@ export default function App () {
     } finally {
       setBookmark({
         title: '',
-        link: ''
+        category: '',
+        image: '',
+        body: ''
       })
     }
   }
@@ -175,6 +183,7 @@ export default function App () {
         handleChangeAuth={handleChangeAuth}
         signUp={signUp}
       />
+      
       <CreateBookmark
         createBookmark={createBookmark}
         bookmark={bookmark}

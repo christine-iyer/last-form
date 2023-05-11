@@ -11,7 +11,7 @@ export default function Login ({
      return (
        <>
          <Form
-                                        style={{ width: '78rem' }}
+                                        style={{ width: '38rem' }}
                                         onSubmit={(e) => {
                                             e.preventDefault()
                                             login()

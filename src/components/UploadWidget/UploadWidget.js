@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Cloudinary } from "@cloudinary/url-gen";
 
 let cloudinary;
 let widget;
@@ -6,12 +7,15 @@ let widget;
 const UploadWidget = ({ children, onUpload }) => {
 
   useEffect(() => {
-
+    // Store the Cloudinary window instance to a ref when the page renders
 
     if ( !cloudinary ) {
       cloudinary = window.cloudinary;
     }
 
+    // To help improve load time of the widget on first instance, use requestIdleCallback
+    // to trigger widget creation. If requestIdleCallback isn't supported, fall back to
+    // setTimeout: https://caniuse.com/requestidlecallback
 
     function onIdle() {
       if ( !widget ) {
@@ -30,18 +34,24 @@ const UploadWidget = ({ children, onUpload }) => {
    */
 
   function createWidget() {
+    // Providing only a Cloud Name along with an Upload Preset allows you to use the
+    // widget without requiring an API Key or Secret. This however allows for
+    // "unsigned" uploads which may allow for more usage than intended. Read more
+    // about unsigned uploads at: https://cloudinary.com/documentation/upload_images#unsigned_upload
 
     const options = {
       cloudName: 'dqjhgnivi', // Ex: mycloudname
       uploadPreset: 'crystal' ,// Ex: myuploadpreset
       cropping: true,
-      maxImageWidth: 200, 
-      
+      maxImageWidth: 200
     }
 
     return cloudinary?.createUploadWidget(options,
       function (error, result) {
-
+        // The callback is a bit more chatty than failed or success so
+        // only trigger when one of those are the case. You can additionally
+        // create a separate handler such as onEvent and trigger it on
+        // ever occurance
         if ( error || result.event === 'success' ) {
           onUpload(error, result, widget);
         }
