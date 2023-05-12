@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Auth from './components/Auth/Auth'
 
-// import CreateBookmark from './components/CreateBookmark/CreateBookmark'
+import CreateBookmark from './components/CreateBookmark/CreateBookmark'
 import BookmarkList from './components/BookmarkList/BookmarkList'
 import { Card,Button, Form, Row, Col } from 'react-bootstrap'
 import { Cloudinary } from "@cloudinary/url-gen";
@@ -216,7 +216,7 @@ export default function App() {
             </div>
 
 
-            <Form
+            {/* <Form
                 style={{ width: '78rem' }}
                 onSubmit={(e) => {
                     e.preventDefault()
@@ -286,18 +286,18 @@ export default function App() {
                 <Button variant='success' type='submit'>Submit
                 </Button>
 
-            </Form>
+            </Form> */}
 
 
 
      
 
       
-      {/* <CreateBookmark
+      <CreateBookmark
         createBookmark={createBookmark}
         bookmark={bookmark}
         handleChange={handleChange}
-      /> */}
+      />
       <BookmarkList
         bookmarks={bookmarks}
         deleteBookmark={deleteBookmark}
