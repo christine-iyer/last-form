@@ -43,6 +43,7 @@ export default function CreateBookmark ({
                                 option={bookmark.category}
                                 value={bookmark.category}
                                 onChange={handleChange}>
+                                    <option value="select One">choose one</option>
                                 <option value="Work">Work</option>
                                 <option value="Family">Family</option>
                                 <option value="Code">Code</option>
