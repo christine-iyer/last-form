@@ -1,4 +1,7 @@
 import Bookmark from '../Bookmark/Bookmark'
+import Card from 'react-bootstrap/Card';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
 export default function BookmarkList ({
   bookmarks,
@@ -6,7 +9,8 @@ export default function BookmarkList ({
   deleteBookmark
 }) {
   return (
-    <ul>
+    
+    <Card>
       {
             bookmarks.length
               ? bookmarks.map(bookmark => (
@@ -21,6 +25,6 @@ export default function BookmarkList ({
                 <h2>No Bookmarks Yet... Add one in the Form Above</h2>
                 </>
         }
-    </ul>
+    </Card>
   )
 }
