@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Auth from './components/Auth/Auth'
-
+import UserLogOut from './components/UserLogOut/UserLogOut'
 import CreateBookmark from './components/CreateBookmark/CreateBookmark'
 import BookmarkList from './components/BookmarkList/BookmarkList'
 import { Card,Button, Form, Row, Col } from 'react-bootstrap'
@@ -69,6 +69,17 @@ export default function App() {
       console.error(error)
     }
   }
+
+  function logOut () {
+    localStorage.removeItem('token')
+  }
+  function handleLogOut() {
+  logOut();
+  setUser(null);
+}
+
+
+
   function handleOnUpload(error, result, widget) {
     if (error) {
       updateError(error);
@@ -185,7 +196,9 @@ export default function App() {
         credentials={credentials}
         handleChangeAuth={handleChangeAuth}
         signUp={signUp}
+        
       />
+      <button onClick={handleLogOut}>LOG OUT</button>
 
 
             <div className="container">

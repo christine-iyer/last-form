@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react'
 import Login from '../Login/Login'
 import SignUp from '../SignUp/SignUp'
+import UserLogOut from '../UserLogOut/UserLogOut'
 
 export default function Auth ({
   login,
   signUp,
+  logout,
   credentials,
   handleChangeAuth
 }) {
