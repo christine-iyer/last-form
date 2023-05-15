@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import styles from './App.module.scss'
 
 import Auth from './components/Auth/Auth'
 import UserLogOut from './components/UserLogOut/UserLogOut'

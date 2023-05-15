@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react'
-import {Card, Button} from 'react-bootstrap'
+import {Card, Button, Container,Row, Col} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Bookmark ({
@@ -11,7 +11,9 @@ export default function Bookmark ({
   const inputRef = useRef(null)
   return (
     <>
-      <Card style={{ width: '18rem' }}>
+    <Container className='p-4'>  
+
+      <Card style={{ width: '33%' }} className="m-2" >
         <Card.Title onClick={() => setShowInput(!showInput)}>{bookmark.title}</Card.Title>
 
         <input
@@ -27,25 +29,29 @@ export default function Bookmark ({
           }}
           defaultValue={bookmark.title}
         />
-        <Card.Img variant="top" src={bookmark.image} />
+        <Card.Img variant="top" src={bookmark.image}/>
         <Card.Body>
         
         <Card.Text>
           {bookmark.body} and {bookmark.category}
-        </Card.Text>
+        
 
-      </Card.Body>
+      
 
 
 
         <a href={bookmark.link} target='_blank' rel='noreferrer'> {bookmark.link}</a>
+        </Card.Text>
         <Button
         variant="primary"
           onClick={() => deleteBookmark(bookmark._id)}
         >
           Delete Me
         </Button>
+        </Card.Body>
 </Card>
+ 
+</Container>  
     </>
   )
 }

@@ -10,7 +10,7 @@ export default function BookmarkList ({
 }) {
   return (
     
-    <Card>
+    <Card >
       {
             bookmarks.length
               ? bookmarks.map(bookmark => (
