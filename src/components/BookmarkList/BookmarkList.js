@@ -11,8 +11,8 @@ export default function BookmarkList ({
 }) {
   return (
     
-    <div >
-    <Card >
+    <div className={styles.div}>
+    <Card className={styles.card}>
       {
             bookmarks.length
               ? bookmarks.map(bookmark => (
