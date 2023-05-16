@@ -17,7 +17,7 @@ export default function Bookmark({
 
         <Col className={styles.column}>
 
-        <Card className="e-card e-card-horizontal" style={{ width: `400px` }} >
+        <Card className="e-card e-card-horizontal" style={{ width: `100px` }} >
           <Card.Title onClick={() => setShowInput(!showInput)}>{bookmark.title}</Card.Title>
 
           <input
