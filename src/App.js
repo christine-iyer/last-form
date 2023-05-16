@@ -229,13 +229,13 @@ export default function App() {
 
                 {error && <p>{error}</p>}
 
-                {url && (
-                    <Card key={url._id} className="card" style={{ width: '18rem' }}
+                {/* {url && (
+                    <Card key={url._id} className="card" style={{ width: '118rem' }}
                     >
-                        <Card.Img variant="top" src={url}id="uploadedimage" ></Card.Img>
+                        <Card.Img placeholder="holder.js/100px180" variant="top" id="uploadedimage" ></Card.Img>
                         <Card.Body className="url">{url}</Card.Body>
                     </Card>
-                )}
+                )} */}
             </div>
       
       <CreateBookmark
