@@ -6,6 +6,7 @@ function handleLogOut() {
   setUser(null);
   function logOut () {
      localStorage.removeItem('token')
+     window.location.reload()
    }
 }
 

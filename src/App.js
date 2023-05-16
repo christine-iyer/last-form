@@ -199,7 +199,16 @@ export default function App() {
         signUp={signUp}
         
       />
-      <button onClick={handleLogOut}>LOG OUT</button>
+      {
+      token? 
+      <button className={styles.button} onClick={() => {
+        localStorage.removeItem('token')
+        window.location.reload()
+      }}>
+        Logout
+      </button>:
+      ''
+    }
 
 
             <div className="container">

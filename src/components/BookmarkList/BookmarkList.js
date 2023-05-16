@@ -11,8 +11,8 @@ export default function BookmarkList ({
 }) {
   return (
     
-    <div className={styles.div}>
-    <Card className={styles.card}>
+    <div style={{display: 'flex', flexDirection: 'row'}} className={styles.div}>
+    <Card className={styles.card} style={{ width: '100%' }} >
       {
             bookmarks.length
               ? bookmarks.map(bookmark => (

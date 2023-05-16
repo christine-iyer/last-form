@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react'
 import { Card, Button, Container, Row, Col } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import styles from '../../App.module.scss'
 export default function Bookmark({
   bookmark,
   updateBookmark,
@@ -12,9 +12,12 @@ export default function Bookmark({
   const columnsPerRow = 4;
   return (
     <>
-      <Container className='p-4'>
+    
+      <Container style={{ margin: `50px`, display: `flex`, flexDirection: `row`, justifyContent: `center` }}>
 
-        <Card style={{ width: '33%' }} className="m-2" >
+        <Col className={styles.column}>
+
+        <Card className="e-card e-card-horizontal" style={{ width: `400px` }} >
           <Card.Title onClick={() => setShowInput(!showInput)}>{bookmark.title}</Card.Title>
 
           <input
@@ -30,7 +33,7 @@ export default function Bookmark({
             }}
             defaultValue={bookmark.title}
           />
-          <Card.Img variant="top" src={bookmark.image} />
+          <Card.Img variant="top" src={bookmark.image} style={{ height: `180px` }} />
           <Card.Body>
 
             <Card.Text>
@@ -45,6 +48,7 @@ export default function Bookmark({
             </Button>
           </Card.Body>
         </Card>
+        </Col>
 
       </Container>
     </>
