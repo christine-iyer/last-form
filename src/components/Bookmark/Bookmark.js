@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react'
 import { Card, Button, Container, Placeholder, Col } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Like from '../Like/Like';
 import styles from '../../App.module.scss'
 export default function Bookmark({
   bookmark,
@@ -47,6 +48,7 @@ export default function Bookmark({
               Cancel
             </Button>
           </Card.Body>
+          <Like />
         </Card>
 
       </Container>

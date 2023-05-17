@@ -1,4 +1,5 @@
 import {Form, Button, Row, Col} from 'react-bootstrap'
+import styles from '../../App.module.scss'
 
 
 export default function CreateBookmark ({
@@ -74,6 +75,16 @@ export default function CreateBookmark ({
                             value={bookmark.body}
                             name='body'
                             placeholder='' />
+                    </Form.Group>
+                    <Form.Group className={styles.like}>
+                        <Form.Label></Form.Label>
+                        <Form.Control
+                            
+                            type='checkbox'
+                            onChange={handleChange}
+                            value={bookmark.like}
+                            name='like'
+                            placeholder='❤️' />
                     </Form.Group>
                 </Row>
 

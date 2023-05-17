@@ -4,7 +4,8 @@ const bookmarkSchema = new Schema({
     title: { type: String, required: true },
     category: {type: String},
     image: { type: String },
-    body: { type: String }
+    body: { type: String },
+    like: {type: Boolean}
 }, {
     timestamps: true
 })
