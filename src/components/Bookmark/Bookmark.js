@@ -48,7 +48,7 @@ export default function Bookmark({
               Cancel
             </Button>
           </Card.Body>
-          <Like />
+       
         </Card>
 
       </Container>

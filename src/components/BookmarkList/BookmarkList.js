@@ -1,4 +1,5 @@
 import Bookmark from '../Bookmark/Bookmark'
+import Like from '../Like/Like';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -7,7 +8,8 @@ import Container from 'react-bootstrap/Container'
 export default function BookmarkList ({
   bookmarks,
   updateBookmark,
-  deleteBookmark
+  deleteBookmark, 
+  likeBookmark
 }) {
   return (
    
@@ -21,6 +23,8 @@ export default function BookmarkList ({
                   bookmark={bookmark}
                   updateBookmark={updateBookmark}
                   deleteBookmark={deleteBookmark}
+                  likeBookmark={likeBookmark}
+
                 />
               ))
               : <>
