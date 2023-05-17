@@ -39,3 +39,18 @@ button {
     transform: rotate(360deg);
   }
 }
+.index {
+  display: flex;
+    
+     flex-direction: row;
+     width: 80%;
+     list-style: none;
+}
+.d-flex {
+  display: flex;
+}
+
+.d-flex > * {
+  flex: 0 auto;
+}
+

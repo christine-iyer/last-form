@@ -10,9 +10,9 @@ export default function BookmarkList ({
   deleteBookmark
 }) {
   return (
-    
-    <div style={{display: 'flex', flexDirection: 'row'}} className={styles.div}>
-    <Card className={styles.card} style={{ width: '100%' }} >
+   
+
+    <div className={styles.container}  >
       {
             bookmarks.length
               ? bookmarks.map(bookmark => (
@@ -27,7 +27,8 @@ export default function BookmarkList ({
                 <h2>No Bookmarks Yet... Add one in the Form Above</h2>
                 </>
         }
-    </Card>
     </div>
+
+
   )
 }

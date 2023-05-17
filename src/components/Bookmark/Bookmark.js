@@ -9,16 +9,16 @@ export default function Bookmark({
 }) {
   const [showInput, setShowInput] = useState(false)
   const inputRef = useRef(null)
-  const columnsPerRow = 4;
+
   return (
-    <>
+    <div className={styles.div}>
     
-      <Container >
+      <Container className={styles.container} >
 
-        <Col className={styles.column}>
+       
 
-        <Card className="e-card e-card-horizontal" >
-          <Card.Title onClick={() => setShowInput(!showInput)}>{bookmark.title}</Card.Title>
+        <Card className={styles.card} >
+          <h2 onClick={() => setShowInput(!showInput)}>{bookmark.title}</h2>
 
           <input
             ref={inputRef}
@@ -44,13 +44,12 @@ export default function Bookmark({
               variant="primary"
               onClick={() => deleteBookmark(bookmark._id)}
             >
-              Delete Me
+              Cancel
             </Button>
           </Card.Body>
         </Card>
-        </Col>
 
       </Container>
-    </>
+    </div>
   )
 }
