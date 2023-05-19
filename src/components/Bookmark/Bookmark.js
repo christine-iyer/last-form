@@ -14,16 +14,25 @@ export default function Bookmark({
   return (
     <div className={styles.div}>
     
-      <Container className={styles.container} >
+      <Container className="text-center">
 
        
 
-        <Card className={styles.card} >
+        <Card       
+         style={{
+          float: "top",
+              width: "90%",
+              backgroundColor: "antiqueWhite",
+              verticalAlign: "left",
+              flexDirection: 'row',
+        height: 90,
+        padding: 0
+            }} >
           <h2 onClick={() => setShowInput(!showInput)}>{bookmark.title}</h2>
 
           <input
             ref={inputRef}
-            style={{ display: showInput ? 'block' : 'none' }}
+            style={{ display: showInput ? 'block' : 'none' ,float: "right"}}
             type='text'
             onKeyDown={(e) => {
               if (e.key === 'Enter') {
@@ -34,10 +43,14 @@ export default function Bookmark({
             }}
             defaultValue={bookmark.title}
           />
-          <Card.Img  src={bookmark.image}  />
-          <Card.Body>
+          <Card.Body  >
+          <Card.Img  className={styles.image}src={bookmark.image} style={{objectFit: "contain"}}  />
+          
 
-            <Card.Text>
+            <Card.Text 
+            className={styles.float}
+            style={{position: "absolute", right: 1,flexDirection: "row",flex: 0.1}}
+            >
               {bookmark.body} and {bookmark.category}
               <a href={bookmark.link} target='_blank' rel='noreferrer'> {bookmark.link}</a>
             </Card.Text>
